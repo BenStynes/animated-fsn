@@ -20,6 +20,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="AnimatedSprite.h" />
+    <ClInclude Include="animationTracker.h" />
     <ClInclude Include="Attacking.h" />
     <ClInclude Include="Defending.h" />
     <ClInclude Include="PlayerFSM.h" />

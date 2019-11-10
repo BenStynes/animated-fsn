@@ -22,10 +22,12 @@ public:
 	const IntRect& getFrame(int);
 	void addFrame(IntRect&);
 	const int getCurrentFrame();
+	void setCurrentFrame(int t_frame);
 	void update();
 	
 private:
 	Clock m_clock;
+	Clock m_mytimer;
 	Time m_time;
 	vector<IntRect> m_frames;
 	int m_current_frame;

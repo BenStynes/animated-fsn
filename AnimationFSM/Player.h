@@ -19,6 +19,7 @@ public:
 	void handleInput(Input);
 	void update();
 	int i = 0;
+	int j = 0;
 };
 
 #endif // !PLAYER_H

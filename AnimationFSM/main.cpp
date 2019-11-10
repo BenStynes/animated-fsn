@@ -19,9 +19,12 @@ int main()
 		return EXIT_FAILURE;
 	}
 
+	
+	
 	// Setup Players Default Animated Sprite
 	AnimatedSprite animated_sprite(texture);
 	//idle
+
 	animated_sprite.addFrame(sf::IntRect(0, 0, 170, 170));
 	animated_sprite.addFrame(sf::IntRect(170, 0, 170, 170));
 	animated_sprite.addFrame(sf::IntRect(340, 0, 170, 170));
@@ -32,8 +35,8 @@ int main()
 
 	//attacking
 	animated_sprite.addFrame(sf::IntRect(850, 0, 170, 170));
-	
-	animated_sprite.addFrame(sf::IntRect(0, 170,170, 170));
+
+	animated_sprite.addFrame(sf::IntRect(0, 170, 170, 170));
 	animated_sprite.addFrame(sf::IntRect(170, 170, 170, 170));
 	animated_sprite.addFrame(sf::IntRect(340, 170, 170, 170));
 	animated_sprite.addFrame(sf::IntRect(510, 170, 170, 170));
@@ -45,8 +48,21 @@ int main()
 	animated_sprite.addFrame(sf::IntRect(170, 510, 170, 170));
 	animated_sprite.addFrame(sf::IntRect(340, 510, 170, 170));
 	animated_sprite.addFrame(sf::IntRect(510, 510, 170, 170));
-	animated_sprite.addFrame(sf::IntRect(680, 510, 170, 170));
-	animated_sprite.addFrame(sf::IntRect(850, 510, 170, 170));
+
+
+	//defending
+	animated_sprite.addFrame(sf::IntRect(340, 170, 170, 170));
+
+	//taunting
+
+	animated_sprite.addFrame(sf::IntRect(0, 1020, 170, 170));
+	animated_sprite.addFrame(sf::IntRect(170, 1020, 170, 170));
+	animated_sprite.addFrame(sf::IntRect(340, 1020, 170, 170));
+	animated_sprite.addFrame(sf::IntRect(510, 1020, 170, 170));
+	//climbing
+	animated_sprite.addFrame(sf::IntRect(510, 850, 170, 170));
+	animated_sprite.addFrame(sf::IntRect(850, 850, 170, 170));
+	
 
 	// Setup the Player
 	Player player(animated_sprite);
@@ -115,14 +131,14 @@ int main()
 				{
 					input.setCurrent(Input::Action::IDLE);
 				}
-
+				break;
 			}
 			
-			player.handleInput(input);
+			
 		}
 
 		// Handle input to Player
-		
+		player.handleInput(input);
 
 		// Update the Player
 		player.update();
