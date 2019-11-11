@@ -85,32 +85,44 @@ int main()
 				break;
 			case sf::Event::KeyPressed:
 
-				if (event.key.code == sf::Keyboard::Left)
+				if (event.key.code == sf::Keyboard::Left && input.getCurrent() != Input::Action::SPACE
+					&& input.getCurrent() != Input::Action::TWO && input.getCurrent() != Input::Action::THREE)
 				{
 					input.setCurrent(Input::Action::LEFT);
 				}
-				else if (event.key.code == sf::Keyboard::Right)
+				else if (event.key.code == sf::Keyboard::Right && input.getCurrent()!= Input::Action::SPACE 
+						&& input.getCurrent() != Input::Action::TWO && input.getCurrent() != Input::Action::THREE)
 				{
 					input.setCurrent(Input::Action::RIGHT);
 
 				}
-				else if (event.key.code == sf::Keyboard::Up)
+				else if (event.key.code == sf::Keyboard::Up && input.getCurrent() != Input::Action::SPACE
+					&& input.getCurrent() != Input::Action::TWO && input.getCurrent() != Input::Action::THREE)
 				{
 					input.setCurrent(Input::Action::UP);
 				}
-				else if (event.key.code == sf::Keyboard::Space)
+				else if (event.key.code == sf::Keyboard::Space && input.getCurrent() != Input::Action::UP
+					&& input.getCurrent() != Input::Action::LEFT && input.getCurrent() != Input::Action::ONE 
+					&& input.getCurrent() != Input::Action::RIGHT  )
 				{
 					input.setCurrent(Input::Action::SPACE);
 				}
-				else if (event.key.code == sf::Keyboard::Num1)
+				else if (event.key.code == sf::Keyboard::Num1 && input.getCurrent() != Input::Action::UP
+					&& input.getCurrent() != Input::Action::LEFT && input.getCurrent() != Input::Action::THREE
+					&& input.getCurrent() != Input::Action::RIGHT && input.getCurrent() != Input::Action::TWO
+					&& input.getCurrent() != Input::Action::SPACE)
 				{
 					input.setCurrent(Input::Action::ONE);
 				}
-				else if (event.key.code == sf::Keyboard::Num2)
+				else if (event.key.code == sf::Keyboard::Num2 && input.getCurrent() != Input::Action::UP
+					&& input.getCurrent() != Input::Action::LEFT && input.getCurrent() != Input::Action::ONE
+					&& input.getCurrent() != Input::Action::RIGHT )
 				{
 					input.setCurrent(Input::Action::TWO);
 				}
-				else if (event.key.code == sf::Keyboard::Num3)
+				else if (event.key.code == sf::Keyboard::Num3 && input.getCurrent() != Input::Action::UP
+					&& input.getCurrent() != Input::Action::LEFT && input.getCurrent() != Input::Action::ONE
+					&& input.getCurrent() != Input::Action::RIGHT  )
 				{
 					input.setCurrent(Input::Action::THREE);
 				}
@@ -119,15 +131,18 @@ int main()
 				break;
 			case sf::Event::KeyReleased:
 
-				if (event.key.code == sf::Keyboard::Right)
+				if (event.key.code == sf::Keyboard::Right && input.getCurrent() != Input::Action::SPACE 
+					&& input.getCurrent() != Input::Action::THREE && input.getCurrent() != Input::Action::TWO)
 				{
 					input.setCurrent(Input::Action::IDLE);
 				}
-				if (event.key.code == sf::Keyboard::Num2)
+				if (event.key.code == sf::Keyboard::Num2 && input.getCurrent() != Input::Action::UP 
+					&& input.getCurrent() != Input::Action::LEFT && input.getCurrent() != Input::Action::RIGHT)
 				{
 					input.setCurrent(Input::Action::IDLE);
 				}
-				if (event.key.code == sf::Keyboard::Up)
+				if (event.key.code == sf::Keyboard::Up && input.getCurrent() != Input::Action::SPACE 
+					&& input.getCurrent() != Input::Action::TWO && input.getCurrent() != Input::Action::THREE)
 				{
 					input.setCurrent(Input::Action::IDLE);
 				}

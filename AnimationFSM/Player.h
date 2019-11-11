@@ -11,6 +11,7 @@ private:
 	PlayerFSM m_state;
 	AnimatedSprite m_animated_sprite;
 	Player();
+	int j = 0;
 	
 public:
 	Player(const AnimatedSprite&);
@@ -19,7 +20,7 @@ public:
 	void handleInput(Input);
 	void update();
 	int i = 0;
-	int j = 0;
+
 };
 
 #endif // !PLAYER_H
